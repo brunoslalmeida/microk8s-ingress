@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: strapi
+  namespace: strapi
+  labels:
+    app: strapi
+    type: backend
+spec:
+  revisionHistoryLimit: 1
+  selector:
+    matchLabels:
+      app: strapi
+  template:
+    metadata:
+      labels:
+        app: strapi
+        type: backend
+    spec:
+      containers:
+      - image: strapi/strapi
+        name: strapi
+        resources:
+          limits:
+            memory: 512m
+            cpu: 1
+        ports:
+        - containerPort: 1337
+          name: strapi   
