@@ -22,8 +22,14 @@ spec:
         name: strapi
         resources:
           limits:
-            memory: 512m
-            cpu: 1
+            memory: 1Gi
+            cpu: 2
         ports:
         - containerPort: 1337
           name: strapi   
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 1337
+          initialDelaySeconds: 10
+          periodSeconds: 5

@@ -1,7 +1,6 @@
 #!/bin/bash
 
-echo "enabling ingress"
-microk8s enable ingress 
+microk8s enable ingress
 
 #install cert-manager
 echo "installing cert-manager"
@@ -10,9 +9,8 @@ microk8s.kubectl apply -f ./cert-manager/cluster-issuer-prod.yaml
 
 #install application
 echo "deploying application"
-microk8s.kubectl apply -f ./strapi/namespace.yaml
-microk8s.kubectl apply -f ./strapi/service.yaml
-microk8s.kubectl apply -f ./strapi/ingress.yaml
-microk8s.kubectl apply -f ./strapi/deployment.yaml
+kubectl apply -f ./strapi/namespace.yaml
+kubectl apply -f ./strapi/service.yaml
+kubectl apply -f ./strapi/ingress.yaml
+kubectl apply -f ./strapi/deployment.yaml
 
-# Documentation
