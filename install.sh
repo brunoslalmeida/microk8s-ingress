@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "enbling ingress"
+echo "enabling ingress"
 microk8s enable ingress 
 
 #install cert-manager
