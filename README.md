@@ -27,4 +27,4 @@
 
 ## Strapi
 
-Strapi is a simple CMS image used with the minimun configuration just for the example
+Strapi is a simple CMS image used with the minimun configuration just for the example. As it will install during first usage it might take some time for the readinessProbe to show working, just check logs in case of any doubts.  
